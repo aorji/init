@@ -1,0 +1,24 @@
+# Identify and display the Ethernet interface characteristics:
+
+# (a) Identify broadcast address
+# A broadcast address is an IP address that is used to target all systems on a specific subnet network instead of single hosts.
+
+# (b) Identify all IP addresses which are part of the same subnet
+
+# Ethernet is a family of computer networking technologies 
+# commonly used in local area networks (LAN), metropolitan area networks (MAN)
+# and wide area networks (WAN).
+
+The -v flag may be used to get more verbose status for an interface.
+mask =255.255.255.240
+
+implies each subnet increments by 16
+
+subnets are
+192.168.32.0 
+192.168.32.16
+192.168.32.32
+192.168.32.48..............etc
+your address 192,168.32.x is in subnet 192.168.32.0
+
+broadcast address is 192.168.32.15
