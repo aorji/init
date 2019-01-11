@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Identify the MAC address of the Wi-Fi card
+
+ifconfig en1 | grep 'ether ' | cut -d ' ' -f2

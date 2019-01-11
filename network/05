@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Identify the IP address of the DNS that
+# responds to the following url: slash16.org
+# DNS (англ. Domain Name System «система доменных имён»)
+
+nslookup slash16.org | grep Address | awk '{print $2}'
+
+
+# The ‘non-authoritative answer’ will show you the original
+# domain name of the website or URL queried with the resolving IP address
