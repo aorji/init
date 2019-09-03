@@ -1,34 +1,17 @@
 #!/bin/bash
 
-# Identify and display the Ethernet interface characteristics:
+# Identify the address of the Ethernet interface
 
 # Ethernet is a family of computer networking technologies 
 # commonly used in local area networks (LAN), metropolitan area networks (MAN)
 # and wide area networks (WAN).
+# en0 - Ethernet
+# en1 - Wi-Fi and so on
 
-# (a) Identify broadcast address
-# A broadcast address is an IP address that is used to target all systems on a specific subnet network instead of single hosts.
+ipconfig getifaddr en0
 
-ifconfig | grep "broadcast" | cut -d ' ' -f6
+# getifaddr interface-name prints to standard output the IP address
+# for the first network service associated with the given interface.
+# The output will be empty if no service is currently configured or active on the interface.
 
-# (b) Identify all IP addresses which are part of the same subnet
-
-ifconfig | grep "netmask" | cut -d ' ' -f4
-ifconfig | grep "inet " | cut -d ' ' -f2 | rev | cut -d '.' -f2- | rev
-
-
-# mask =255.255.255.240
-# implies each subnet increments by 16
-# subnets are
-# 192.168.32.0 
-# 192.168.32.16
-# 192.168.32.32
-# 192.168.32.48..............etc
-# your address 192,168.32.x is in subnet 192.168.32.0
-
-
-# The -v flag may be used to get more verbose status for an interface.
-
-#Generally named as they are initiated on startup, 1st en0 is normally 
-#Ethernet, en1 normally Airport, but some computers will have more 
-#ethernet Ports end Airport moved up to en2, en3 etc..
+# also ifconfig en0 | grep 'inet ' | awk '{print $2}'

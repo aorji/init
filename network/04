@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Identifiy the default gateway in the routing table
+# Identify the default gateway in the routing table
 
 # Netstat combined with the -r option will display the
 # kernel routing tables. This is commonly used with the -n option,
 # which will only show numerical addresses rather than performing any
 # sort of name resolution.
 
+# So, a gateway is any router (or routing host) through which packets
+# pass (are sent) when trying to reach a given set of destinations.
 netstat -nr | grep 'default' | awk '{print $2}'

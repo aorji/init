@@ -4,8 +4,6 @@
 # responds to the following url: slash16.org
 # DNS (англ. Domain Name System «система доменных имён»)
 
-nslookup slash16.org | grep Address | awk '{print $2}'
+nslookup slash16.org | grep Server | awk '{print $2}'
 
-
-# The ‘non-authoritative answer’ will show you the original
-# domain name of the website or URL queried with the resolving IP address
+# The first line contains the IP address of the DNS that responded.

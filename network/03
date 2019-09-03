@@ -1,5 +1,17 @@
 #!/bin/bash
 
-# Identify the MAC address of the Wi-Fi card
+# Identify the MAC address of the Bluetooth PAN
 
-ifconfig en1 | grep 'ether ' | cut -d ' ' -f2
+# PAN = Personal Area Network
+
+# networksetup -listallhardwareports
+
+networksetup -getmacaddress 'Bluetooth PAN' | awk '{print $3}'
+
+# -getmacaddress hardwareport displays ethernet (or Wi-Fi) address
+# for hardwareport or device specified.
+
+# from http://osxdaily.com/2014/09/03/list-all-network-hardware-from-the-command-line-in-os-x/ :
+# the hardware address of the device, called Ethernet Address here,
+# but you may know it better as a devices MAC address, which can be
+# important to know for address filtering and spoofing.

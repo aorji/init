@@ -8,12 +8,13 @@
 # but does not have to have a physical form. Instead, the network interface can be 
 # implemented in software.
 
-# If you'd like to view the configuration of all network interfaces on the system 
-#(not just the ones that are currently active), you can specify the -a option, like this: ifconfig -a
-
+# The ifconfig utility is used to assign an address to a network interface
+# and/or configure network interface parameters.
 # The -l flag may be used to list all available interfaces on the system, with no
 # other additional information.  Use of this flag is mutually exclusive with all
 # other flags and commands, except for -d (only list interfaces that are down) and
 # -u (only list interfaces that are up).
+# If you'd like to view the configuration of all network interfaces on the system 
+#(not just the ones that are currently active), you can specify the -a option, like this: ifconfig -a
 
 ifconfig -l

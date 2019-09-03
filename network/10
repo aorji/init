@@ -1,1 +1,10 @@
 #!/bin/bash
+
+#Identify the network devices between your computer and the slash16.org domain
+
+# A hop is a computer networking term that refers to the number of
+# routers that a packet (a portion of data) passes through from its source to its destination.
+# Each hop represents a network device between the computer on which
+# you're running the tracert command, and your router.
+
+traceroute slash16.org

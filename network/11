@@ -1,1 +1,16 @@
-#!/bin/bash
+# Use the output of the previous command to find the name and IP address of the
+# device that makes the link between you (local network) and the outside world
+
+
+# Internet service provider hands you a single Internet Protocol address and your
+# router shares it amongst all the connected devices in your home.
+
+# When you connect to a website – say, howtogeek.com – the traffic has to go through
+# several intermediaries before reaching the website. The traffic goes through your local
+# router, your Internet service provider’s routers, onto larger networks, and so on.
+
+# Traceroute shows us the path traffic takes to reach the website. 
+
+# first line is device that makes the link between me and world
+name: 178.214.196.33
+IP: 178.214.196.33

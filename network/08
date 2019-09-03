@@ -1,1 +1,6 @@
-#!/bin/bash
+# Find the provider of slash16.org
+
+With 'nslookup slash16.org' get IP adress.
+With whois <IP adress> get the provider
+
+Result: Amazon

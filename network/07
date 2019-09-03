@@ -1,1 +1,13 @@
 #!/bin/bash
+
+# Query an external DNS server on the slash16.org
+# domain name (ie. : google 8.8.8.8)
+
+# nslookup - query Internet name servers interactively
+
+nslookup slash16.org 8.8.8.8
+
+# INTERACTIVE COMMANDS
+# host [server]
+# Look up information for host using the current default
+# server or using server, if specified. 

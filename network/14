@@ -1,1 +1,3 @@
-#!/bin/bash
+# What file contains the local DNS entries?
+
+/etc/hosts
