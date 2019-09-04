@@ -1,0 +1,35 @@
+#For example, we have the `df` command. It lets you know what disk space is currently used.
+
+#top` which can display the linux processes that are in use currently
+
+#`ps` which, on the other hand, allows the moment to tell the processes that are running.
+
+#`ifconfig` what is it for? It is used to configure and also display the network interfaces of your system.
+
+#`ping` which allows to send a packet to another server for example. And the remote server does what?
+He is playing ping pong with us and so he sends us the ball, he sends us a pong we see on our screen.
+
+#`netstat`, which allows to display the connections on our server currently, the ports used, etc
+
+#`traceroute` actually allows to display from point A to a point B, the path list of your package.
+
+#For example, we use the `hosts` file. So `` what`s what? It allows to define an IP, a name manually.
+Basically for example we have slash16.org which is local on a virtual machine that has an IP in 192.168.1.1,
+we say that slash16.org is 192.168.1.1 and we defined it in this file there.
+
+#Then we have the `networks` file which allows it to give a logical name to a network.
+So for example we have all the IP in 192.168.1 from 1 to 254 we say that in fact this
+is the network slash16. And in fact it allows to define more simply your network.
+
+#`host.conf` file. So what is it for? It allows to say who decides what.
+In simpler terms we will say it allows to say if it is actually a configuration file that resolves the domain
+names or if it is the service `bind` through the DNS servers.
+
+#`resolve.conf` file, which allows you to define your name servers, so DNS.
+On top of that you can put that for example I use the Google name server which is 8.8.8.8
+And so it allows you to use a different server than what your provider gives you or the one that 42 uses.
+
+#`interface` file that is in` / etc / network`.
+And so this file allows you to configure all of your system interfaces concerning the network.
+So basically, you can define that your ethernet interface is called eth0 it uses DHCP,
+so basically it gets an IP from your DHCP server, or you set it a static IP.
