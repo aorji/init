@@ -1,0 +1,7 @@
+# Figure out the exact size of each folder of /var
+
+du -sh /var/*
+
+# du Summarize disk usage of each FILE, recursively for directories.
+# -s, --summarize — Display only a total for each argument.
+# -h, --human-readable — Print sizes in human readable format

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#What command gives you the time since your system was last booted?
+
+#uptime -- show how long system has been running
+
+uptime
+

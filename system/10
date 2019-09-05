@@ -1,0 +1,10 @@
+#Name the command that lists the partition tables of external devices?
+(таблицы разделов внешних устройств)
+
+#fdisk - manip disk partitional tables
+#fdisk -l [device... ], -l == --list ->
+#list the partition tables for the specified devices;
+#if no device given -> mentioned in /proc/partitions are used
+
+
+/sbin/fdisk -l

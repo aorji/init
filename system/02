@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#What command can you use to rename your system?
+
+#hostname - show or set the system's host name
+#When called with one argument or with the --file option,
+#the commands set the host name, the NIS/YP domain name or the node name.
+#Note, that only the super-user can change the names.
+
+hostname new_sys_name
