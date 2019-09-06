@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Identify the MAC address of the Bluetooth PAN
 
 # PAN = Personal Area Network

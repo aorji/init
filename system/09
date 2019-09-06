@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #What command lets you know who is connected to the System?
 
 #who - Print information about users who are currently logged in.

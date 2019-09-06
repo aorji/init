@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #Identify the network devices between your computer and the slash16.org domain
 
 # A hop is a computer networking term that refers to the number of

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #Name the command that determines the state of the SSH service.
 
 #Secure Shell (SSH) is a cryptographic network protocol for

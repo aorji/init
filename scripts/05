@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -n 42
+
+#-n    Do not print the trailing newline character.

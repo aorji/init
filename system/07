@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #Figure out the PID of the SSHD service
 
 #sshd -- OpenSSH SSH daemon

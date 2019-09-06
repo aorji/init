@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#Write a script which updates all the package sources, then all the packages, and then
+#logs everything in a file named /var/log/update_script.log. Create a scheduled
+#task for this script, once per week at 4 AM.
+
+file=/var/log/update_script.log
+
+apt-get update >> $file
+apt-get upgrade >> $file
+
+# to schedule add '0 4 * * * <user - optional> <script_file_name>' to crontab with 'crontab -e'
+# This means at $ AM as the user, run the script_file_name binary
+
+#-e Edit the current crontab using the editor specified by the VISUAL or EDITOR environment variables.
+# The crontab will be saved in /var/spool/cron/crontabs as a crontab specific to the user who created it.
+# To later remove a Cron job from it, delete the line from the user’s crontab file.
+
+#https://crontab.guru/
+#https://www.linode.com/docs/tools-reference/tools/schedule-tasks-with-cron/

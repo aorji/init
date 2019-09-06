@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Identify the address of the Ethernet interface
 
 # Ethernet is a family of computer networking technologies 
@@ -14,4 +12,4 @@ ipconfig getifaddr en0
 # for the first network service associated with the given interface.
 # The output will be empty if no service is currently configured or active on the interface.
 
-# also ifconfig en0 | grep 'inet ' | awk '{print $2}'
+# also ifconfig en0 | grep 'inet ' |  '{print $2}'

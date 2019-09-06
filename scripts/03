@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Write a script which displays the list of files from the folder given as parameter,
+#sorted by size.
+
+#-S -> sort files by size && https://habr.com/ru/company/ruvds/blog/326328/
+
+if [ -d $1 ]
+then
+    ls -lS $1
+else
+    echo "Not a directory"
+fi

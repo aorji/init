@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Identify the default gateway in the routing table
 
 # Netstat combined with the -r option will display the
