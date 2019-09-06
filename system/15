@@ -1,0 +1,15 @@
+#Find the command that kills the background command’s process
+
+pkill tail
+
+#The pkill command allows to kill a program by specifying the full name or partial name.
+# or kill <PROCESS ID>
+# or killall <proc name>
+
+# kill -l -> list of kill signals
+
+# most common:    9 Kill signal
+#                 1 restart signal
+#                 17, 19, 23 Stop the process
+# 
+# The default signal sent is SIGTERM

@@ -1,0 +1,10 @@
+#Find the command which gives the list of firewall rules
+
+#A firewall is a network security program that controls
+#the incoming and outgoing connections based on the rules that are set.
+#Linux has a default firewall I.e iptables.
+#Using iptables an administrator can set the rules of the firewall.
+
+iptables -L
+
+#only for root

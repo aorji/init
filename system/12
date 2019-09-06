@@ -5,3 +5,6 @@ du -sh /var/*
 # du Summarize disk usage of each FILE, recursively for directories.
 # -s, --summarize — Display only a total for each argument.
 # -h, --human-readable — Print sizes in human readable format
+
+#or: du -h -d0 <dir name> (defaulte dir - your curr dir)
+# -d, --max-depth=N

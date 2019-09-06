@@ -1,0 +1,8 @@
+# Find the service which makes it possible to run
+# specific tasks following a regular schedule
+
+cron
+
+# The cron utility then wakes up every minute,
+# examining all stored crontabs, checking each command to see if it
+# should be run in the current minute.

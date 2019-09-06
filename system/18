@@ -1,0 +1,81 @@
+##With the previous command,
+##authorize only IP addresses from 10.0.0.0/8 to connect to your system
+
+iptables -A INPUT -s 10.0.0.0/8 -j ACCEPT
+iptables -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
+
+#man iptables:
+#
+#-A, --append chain rule-specification —
+#Append one or more rules to the end of the selected chain.
+#When the source and/or destination names resolve to more than one address,
+#a rule will be added for each possible address combination.
+#
+#-j, --jump target —
+#This specifies the target of the rule; i.e., what to do if the packet matches it.
+#The target can be a user-defined chain (other than the one this rule is in),
+#one of the special builtin targets which decide the fate of the packet immediately,
+#or an extension (see EXTENSIONS below). If this option is omitted in a rule
+#(and -g is not used), then matching the rule will have no effect on the packet's fate,
+#but the counters on the rule will be incremented.
+#
+#[!] -s, --source address[/mask][,...] —
+#Source specification. Address can be either a network name,
+#a hostname, a network IP address (with /mask), or a plain IP address.
+#Hostnames will be resolved once only, before the rule is submitted to the kernel.
+#Please note that specifying any name to be resolved with a remote query such as DNS
+#is a really bad idea. The mask can be either an ipv4 network mask (for iptables) or
+#a plain number, specifying the number of 1's at the left side of the network mask.
+#Thus, an iptables mask of 24 is equivalent to 255.255.255.0.
+#A "!" argument before the address specification inverts the sense of the address.
+#The flag --src is an alias for this option. Multiple addresses can be specified,
+#but this will expand to multiple rules (when adding with -A), or will cause multiple
+#rules to be deleted (with -D).
+#
+#[!] -d, --destination address[/mask][,...] —
+#Destination specification. See the description of the -s(source)
+#flag for a detailed description of the syntax.
+#The flag --dst is an alias for this option.
+#
+#Types of chains
+#
+##https://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/
+#
+#iptables uses three different chains: input, forward, and output.
+#
+#Input – This chain is used to control the behavior for incoming connections. For example, if a user attempts 
+#to SSH into your PC/server, iptables will attempt to match the IP address and port to a rule in the input chain.
+#Forward – This chain is used for incoming connections that aren’t actually being delivered locally. Think of 
+#a router – data is always being sent to it but rarely actually destined for the router itself; the data is just 
+#forwarded to its target. Unless you’re doing some kind of routing, NATing, or something else on your system that requires forwarding,
+#you won’t even use this chain.
+#Output – This chain is used for outgoing connections. For example, if you try to ping howtogeek.com, iptables
+#will check its output chain to see what the rules are regarding ping and howtogeek.com before making a decision 
+#to allow or deny the connection attempt.
+#Even though pinging an external host seems like something that would only need to traverse the output chain, 
+#keep in mind that to return the data, the input chain will be used as well. When using iptables to lock down your 
+#system, remember that a lot of protocols will require two-way communication, so both the input and output chains will need to be configured properly.
+#SSH is a common protocol that people forget to allow on both chains.
+#Policy chain default behavior
+#More times than not, you’ll want your system to accept connections by default. Unless you’ve changed the policy chain 
+#rules previously, this setting should already be configured. Either way, here’s the command to accept connections by default:
+#
+#iptables --policy INPUT ACCEPT
+#iptables --policy OUTPUT ACCEPT
+#iptables --policy FORWARD ACCEPT
+#If you would rather deny all connections and manually specify which ones you want to allow to connect,
+#you should change the default policy of your chains to drop.
+#Doing this would probably only be useful for servers that contain sensitive information and only ever have
+#the same IP addresses connect to them.
+#
+#iptables --policy INPUT DROP
+#iptables --policy OUTPUT DROP
+#iptables --policy FORWARD DROP
+#Connection-specific responses
+#
+#Accept – Allow the connection.
+#
+#Drop – Drop the connection, act like it never happened. This is best if you don’t want the source to realize your system exists.
+#
+#Reject – Don’t allow the connection, but send back an error. This is best if you don’t want a particular
+#source to connect to your system, but you want them to know that your firewall blocked them.

@@ -1,0 +1,7 @@
+#With the previous command, forbid all others
+
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+
+#-P, --policy chain target — Set the policy for the built-in (non-user-defined)
+#chain to the given target. The policy target must be either ACCEPT or DROP.

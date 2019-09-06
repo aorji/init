@@ -1,0 +1,16 @@
+#Run the ‘tail -f /var/log/syslog‘ command in background
+
+tail -f /var/log/syslog &
+
+#The -f option causes tail to not stop when end of file is reached,
+#but rather to wait for additional data to be appended to the input.
+
+#If you want to push a command into the background, using & at the end is an easy way to do that.
+#It comes with a catch, though. Using & doesn’t disconnect the command away from you;
+#it just pushes it in the background so you can continue using a terminal.
+#
+#command &
+#
+#When the terminal session is closed, the command ends.
+#Using & is good if you need to push something off for a bit,
+#but don’t expect it to continue forever.
