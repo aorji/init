@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Write a script which monitors the modifications made to the /etc/crontab file
+#and sends an e-mail to root if the file is modified.
+#Create a scheduled task to run this script everyday at midnight.
+
+if [ -e testfile ]
+then
+    if ! md5sum -c testfile
+    then
+        echo "/etc/crontab was modified" | mail -s "CRONTAB NOTIFICATION" root
+        md5sum /etc/crontab > crontab_sum
+    fi
+else
+    md5sum /etc/crontab > crontab_sum
+fi
+
+#apt-get install mailutils
+#https://www.binarytides.com/linux-mail-command-examples/
